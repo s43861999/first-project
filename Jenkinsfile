@@ -19,15 +19,18 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                sshagent(['root'])
+                sshagent(['root']) {
                 scp -o StrictHostkeyChecking=no Firstproject-1.0-SNAPSHOT.jar' root@ec2-54-160-132-51.compute-1.amazonaws.com:/opt/apache-tomcat-11.0.9/webapps
+
+                }
+       
                }
          }        
-               
+         
 
         stage('Test') {
             steps {
-                sh 'mvn test'  // Run unit tests
+                sh 'mvn test'  // Run unit tests !!
             }
         }
        
@@ -49,7 +52,7 @@ pipeline {
             echo 'Build and deployment successful!'
         }
         failure {
-            echo 'Build failed!' !!
+            echo 'Build failed!' !! !
         }
     }
 }
