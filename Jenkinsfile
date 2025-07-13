@@ -42,8 +42,8 @@ pipeline {
 
         
     }
-
-    post {
+#
+    post { 
         success {
             echo 'Build and deployment successful!'
         }
