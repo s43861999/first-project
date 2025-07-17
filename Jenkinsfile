@@ -1,5 +1,8 @@
 pipeline {
     agent any  // Use any available agent
+    environment {
+        PATH ="/opt/apache-tomcat-11.0.9/bin:$PATH"     
+    }
 
     tools {
         maven 'maven'  // Ensure this matches the name configured in Jenkins
@@ -13,14 +16,13 @@ pipeline {
 
         stage('Build') {
             steps {
-                
-                sh 'mvn clean package'  // Run Maven build
+                sh 'mvn clean install'  // Run Maven build
             }
         }
-        stage('Deploy') {
+        stage('connect to server') {
             steps {
-                sshagent(['root']) {
-                scp -o StrictHostkeyChecking=no Firstproject-1.0-SNAPSHOT.jar' root@ec2-54-160-132-51.compute-1.amazonaws.com:/opt/apache-tomcat-11.0.9/webapps
+              sshagent(['root']) {
+                 sh "scp -o StrictHostKeyChecking=no Firstproject-1.0-SNAPSHOT.jar' root@ec2-54-160-132-51.compute-1.amazonaws.com:/opt/apache-tomcat-11.0.9/webapps"
 
                 }
        
