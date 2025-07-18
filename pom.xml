@@ -7,7 +7,7 @@
   <groupId>com.maven.test</groupId>
   <artifactId>first-project</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <packaging>jar</packaging>
+  <packaging>war</packaging>
 
   <name>first-project</name>
   <url>http://www.example.com</url>
@@ -37,9 +37,16 @@
     <artifactId>commons-lang3</artifactId>
     <version>3.17.0</version>
 </dependency>
+<dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>4.0.1</version>
+            <scope>provided</scope>
+        </dependency>
   </dependencies>
 
   <build>
+  <finalName>webapp</finalName>
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
