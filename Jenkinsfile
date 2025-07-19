@@ -22,7 +22,9 @@ pipeline {
         stage('connect to server') {
             steps {
               sshagent(['tomcat']) {
-                 sh "scp -o StrictHostKeyChecking=no webapp.war tomcat@ec2-44-220-152-14.compute-1.amazonaws.com:/opt/apache-tomcat-11.0.9/webapps"
+                 sh ls -l $WORKSPACE/target/
+                 sh pwd
+                 sh "scp -o StrictHostKeyChecking=no $WORKSPACE/target/webapp.war tomcat@ec2-44-220-152-14.compute-1.amazonaws.com:/opt/apache-tomcat-11.0.9/webapps"
 
                 }
        
