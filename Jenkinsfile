@@ -6,7 +6,7 @@ pipeline {
         DOCKER_HOST_USER = 'ec2-user' // e.g., 'ubuntu' or 'ec2-user'
         DOCKER_HOST_IP = 'ec2-54-147-22-5.compute-1.amazonaws.com'
         DOCKER_APP_DIR = '/opt/' // Remote directory for your app files
-        WAR_FILE_NAME = 'devopsnew.war
+        WAR_FILE_NAME = 'devopsnew.war'
     }
 
     stages {
