@@ -13,7 +13,7 @@ pipeline {
         stage('Build Application') {
             steps {
                 // Ensure Maven is correctly configured in Jenkins Tool Installations
-                sh 'mvn clean package'
+                sh 'mvn clean install'
             }
         }
 
