@@ -19,7 +19,7 @@ pipeline {
             }
         }
 
-        stage('Deploy to Docker Host') {
+        stage('Deploy to Docker test Host') {
             steps {
                 script {
                     // Connect to the remote Docker host using the stored SSH credentials
