@@ -1,12 +1,12 @@
 pipeline {
     agent {
-       label 'jenkins-new'
+       label 'agent'
      }
 
     environment {
         // Define remote connection variables
         DOCKER_HOST_USER = 'ec2-user' // e.g., 'ubuntu' or 'ec2-user'
-        DOCKER_HOST_IP = 'ec2-184-72-178-31.compute-1.amazonaws.com'
+        DOCKER_HOST_IP = 'ec2-3-90-21-54.compute-1.amazonaws.com'
         DOCKER_APP_DIR = '/opt/' // Remote directory for your app files
         WAR_FILE_NAME = 'devopsnew.war'
     }
