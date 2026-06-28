@@ -1,6 +1,5 @@
 pipeline {
-    any
-
+    agent any
     environment {
         // Define remote connection variables
         DOCKER_HOST_USER = 'ec2-user' // e.g., 'ubuntu' or 'ec2-user'
