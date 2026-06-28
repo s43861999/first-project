@@ -1,7 +1,5 @@
 pipeline {
-    agent {
-       label 'any'
-     }
+    any
 
     environment {
         // Define remote connection variables
